@@ -814,7 +814,7 @@ box-shadow: 0px 0px 8px 6px orange;
   padding: 25px;
   z-index: 5;
   margin: 0;
-  max-height: 500px;
+  max-height: 1000px;
   opacity: 90%;
   transition: opacity 0.25s;
   text-shadow: 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000;
@@ -1465,7 +1465,6 @@ flex-wrap: nowrap;
 
   .showtrue {
     top: 75%;
-    max-height: 500px;
   }
 
   .daylimit, .combatlimit {
