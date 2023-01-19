@@ -1,5 +1,13 @@
 /* BODY */
 
+.notscrolly {
+  overflow-y: hidden;
+}
+
+.scrolly {
+  overflow-y: overlay;
+}
+
 .visibletrue {
   opacity: 1;
   transition: opacity 0.4s ease-in-out;
@@ -120,7 +128,6 @@ body {
   
   background: url("../public/images/bgs/app.jpg")  no-repeat center center fixed;
   background-size: cover;
-  overflow-y: overlay;
   width: auto;
   height: auto;
   margin: -8px;

@@ -116,10 +116,10 @@ mod(int, nome) {
       return null;
     }
 
-    if (!this.state.visible) {
-      document.body.style.overflowY = "hidden"
-    } else if (this.state.overlayOn) { document.body.style.overflowY = "hidden" }
-    else { document.body.style.overflowY = "overlay" }
+    if (!this.state.visible || this.state.overlayOn) {
+      document.body.className = "notscrolly"
+    } 
+    else { document.body.className = "scrolly" }
 
     let arrCA = this.state.data.inventario.filter(d => this.match(d.nome, this.state.inventario, "modificatore", "skill") === "CA")
                                           .map(d => this.match(d.nome, this.state.inventario, "modificatore", "bonus"))
