@@ -6,6 +6,7 @@ import Stats from "./Stats";
 import Background from './Background';
 import Dropdown from "./Dropdown";
 import axios from "axios";
+import * as ReactDOM from 'react-dom'
 
 class Pg extends React.Component {
   
@@ -135,7 +136,7 @@ mod(int, nome) {
         <div className={"loading visible" + this.state.visible}>
             <img src="/images/loading.gif" />
         </div>
-        <div className={data.religione + " App " + "overlay" + this.state.overlayOn + " visible" + this.state.visible}>
+        <div id="background-app" className={data.religione + " App " + "overlay" + this.state.overlayOn + " visible" + this.state.visible}>
           {this.props.loggedIn && 
           <div>
             <div className="admin-header">
@@ -187,14 +188,14 @@ mod(int, nome) {
   }
 
   componentDidMount() {
+
+    try {
+      this.pgAPI()} catch (e) {console.log(e)}
+
     Promise.all(Array.from(document.images).filter(img => !img.complete)
                                            .map(img => new Promise(resolve => { img.onload = img.onerror = resolve; })))
                                            .then(() => {
-      try {
-        this.pgAPI()
         setTimeout(() => {this.setState({visible: true})}, 2500)
-
-      } catch (e) {console.log(e)}
   });
   }
 }
