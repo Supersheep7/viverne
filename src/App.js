@@ -50,6 +50,7 @@ class App extends React.Component {
 render() {
 
   return (
+    <Router>
       <Routes>
         <Route exact path="/" element={<List loggedIn={this.state.loggedIn} username={this.state.username} updateUser={this.updateUser}/>}/>
         <Route exact path="/personaggio/:nome" element={<Pg loggedIn={this.state.loggedIn} username={this.state.username} updateUser={this.updateUser}/>} />
@@ -57,6 +58,7 @@ render() {
         <Route exact path="/login" element={<Loginform  loggedIn={this.state.loggedIn} username={this.state.username} updateUser={this.updateUser}/>} />
         <Route exact path="/lvlup" element={<Lvlup jwt={this.state.key} loggedIn={this.state.loggedIn} username={this.state.username} updateUser={this.updateUser}/>} />
       </Routes>
+    </Router>
   )
 }
 
