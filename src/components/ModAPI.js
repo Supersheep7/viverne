@@ -68,7 +68,7 @@ class Arc extends React.Component {
 
     render() {
         
-        const backgroundUrl = "/images/attr/" + this.props.nome + ".png"
+        const backgroundUrl = "/images/attr/" + this.props.nome + ".jpg"
         let modSum = this.props.data.skills[this.props.father][this.props.nome] + this.props.data.stats[this.props.stat]
       
         return (
