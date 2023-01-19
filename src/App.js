@@ -52,10 +52,10 @@ render() {
   return (
       <Routes>
         <Route exact path="/" element={<List loggedIn={this.state.loggedIn} username={this.state.username} updateUser={this.updateUser}/>}/>
-        <Route path="/personaggio/:nome" element={<Pg loggedIn={this.state.loggedIn} username={this.state.username} updateUser={this.updateUser}/>} />
-        <Route path="/signup" element={<Signup loggedIn={this.state.loggedIn} username={this.state.username} />} />
-        <Route path="/login" element={<Loginform  loggedIn={this.state.loggedIn} username={this.state.username} updateUser={this.updateUser}/>} />
-        <Route path="/lvlup" element={<Lvlup jwt={this.state.key} loggedIn={this.state.loggedIn} username={this.state.username} updateUser={this.updateUser}/>} />
+        <Route exact path="/personaggio/:nome" element={<Pg loggedIn={this.state.loggedIn} username={this.state.username} updateUser={this.updateUser}/>} />
+        <Route exact path="/signup" element={<Signup loggedIn={this.state.loggedIn} username={this.state.username} />} />
+        <Route exact path="/login" element={<Loginform  loggedIn={this.state.loggedIn} username={this.state.username} updateUser={this.updateUser}/>} />
+        <Route exact path="/lvlup" element={<Lvlup jwt={this.state.key} loggedIn={this.state.loggedIn} username={this.state.username} updateUser={this.updateUser}/>} />
       </Routes>
   )
 }
