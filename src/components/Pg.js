@@ -116,7 +116,6 @@ mod(int, nome) {
   render() {
 
     const { isLoading, bonus, data } = this.state
-    const baseUrl = "C:/Repo/Projects/caverne_viverne/frontend/public/images/";
   
     if (isLoading) {
       return null;
@@ -143,7 +142,7 @@ mod(int, nome) {
           nome={data.nome} magia={data.religione} eta={data.eta} altezza={data.altezza} 
           data={data} CA={10 + data.skills.motskills.reazione + totalCA} pf={this.state.pf}
           mana={this.state.mana} luc={this.state.luc} maxpf={data.maxpf} maxmana={data.maxmana} maxluc={data.maxluc}
-          source={baseUrl + data.nome} visible={this.state.visible}/>
+          visible={this.state.visible}/>
           <div className='dropdown-wrapper'>
             <Stats data={data} />
             <Dropdown nome="abilita_innate" base={"abilita"} data={data.abilita_innate}/>
