@@ -7,8 +7,6 @@ import Loginform from "./components/login-form"
 import Lvlup from "./components/Lvlup"
 import axios from "axios"
 
-
-
 class App extends React.Component {
   constructor(props) {
     super(props)
