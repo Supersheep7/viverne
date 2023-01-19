@@ -117,7 +117,7 @@ class Skill extends React.Component {
         return (
             <div id={this.props.nome} className="skillcard">
                 <div className="skill-tag"> 
-                    <img className={"skillimg" + " fav" + fav} src={"/images/attr/" + this.props.nome + ".png"}/>
+                    <img className={"skillimg" + " fav" + fav} src={"/images/attr/" + this.props.nome + ".jpg"}/>
                     <div className='skilltitle'>
                         <h4>{
                         !this.props.nome.includes("_") &&
