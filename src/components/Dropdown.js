@@ -23,6 +23,7 @@ export default class Dropdown extends React.Component {
        setTimeout(() => {
             this.setState ({ open: !this.state.open })
         }, 60)
+        
     }
 
     showHandleClick(nome) {
