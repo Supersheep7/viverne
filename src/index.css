@@ -9,6 +9,27 @@
   opacity: 0;
 }
 
+.loading.visibletrue {
+  display: none;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  overflow-y: hidden;
+}
+
+.loading * {
+  width: 100px;
+}
+
 label {
   color: whitesmoke;
 }
