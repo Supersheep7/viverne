@@ -1,4 +1,5 @@
 import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 class Stats extends React.Component {
 
@@ -25,6 +26,7 @@ class Stats extends React.Component {
                 <div className={"stats open" + this.state.open}>
                     <div className={"backdrop open" + this.state.open}>
                         <div className={"statscards open" + this.state.open}>
+                            
                             <Stat nome="intelletto" className="single-stat" data={this.props.data} colore={this.props.colore}/>
                             <div className='stats-wrapper'>
                                 <Skill nome="logica" data={this.props.data} colore={this.props.colore}/>
@@ -56,8 +58,8 @@ class Stats extends React.Component {
                                 <Skill nome="reazione" data={this.props.data} colore={this.props.colore}/>
                                 <Skill nome="precisione" data={this.props.data} colore={this.props.colore}/>
                                 <Skill nome="intuito_di_razza" data={this.props.data} colore={this.props.colore}/>
-                            </div>
-                        </div>
+                            </div> 
+        </div>
                     </div>
                 </div>
             </div>
@@ -117,23 +119,25 @@ class Skill extends React.Component {
         return (
             <div id={this.props.nome} className="skillcard">
                 <div className="skill-tag"> 
-                    <img className={"skillimg" + " fav" + fav} src={"/images/attr/" + this.props.nome + ".jpg"}/>
-                    <div className='skilltitle'>
-                        <h4>{
-                        !this.props.nome.includes("_") &&
-                        this.props.nome.charAt(0).toUpperCase() + this.props.nome.slice(1)
-                        }
-                        {this.props.nome.includes("_") && this.props.nome !== "forza_di_volonta" &&
-                        this.props.nome.charAt(0).toUpperCase() + this.props.nome.slice(1).replace(/_/g, " ")
-                        }
-                        {this.props.nome === "forza_di_volonta" && 
-                        "Forza di volontà"}
-                        </h4>
-                    </div>
-                    <div className="skill-content">
+                    <div className={"white-shadow" + " fav" + fav}>
+                        <img className={"skillimg"} src={"/images/attr/" + this.props.nome + ".jpg"}/>
+                        </div>
+                        <div className='skilltitle'>
+                            <h4>{
+                            !this.props.nome.includes("_") &&
+                            this.props.nome.charAt(0).toUpperCase() + this.props.nome.slice(1)
+                            }
+                            {this.props.nome.includes("_") && this.props.nome !== "forza_di_volonta" &&
+                            this.props.nome.charAt(0).toUpperCase() + this.props.nome.slice(1).replace(/_/g, " ")
+                            }
+                            {this.props.nome === "forza_di_volonta" && 
+                            "Forza di volontà"}
+                        </h4> 
+                        </div>
+                     <div className="skill-content">
                         <div>
                             <div>
-                                {Array(num).fill(<img src="/images/attr/attrpointfull.png" className='attrfull' style={{width: "12px"}}/>)}
+                                {Array(num).fill(<img src="/images/attr/attrpointfull.png" className='attrfull' style={{width: "14px"}}/>)} 
                             </div>
                         </div>
                     </div>
@@ -143,6 +147,7 @@ class Skill extends React.Component {
                             <p>{num + attr}</p>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         )

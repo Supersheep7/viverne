@@ -189,7 +189,8 @@ mod(int, nome) {
     Promise.all(Array.from(document.images).filter(img => !img.complete)
                                            .map(img => new Promise(resolve => { img.onload = img.onerror = resolve; })))
                                            .then(() => {
-        setTimeout(() => {this.setState({visible: true})}, 2500)
+       setTimeout(() => {this.setState({visible: true})}, 2500)
+        
   });
   }
 }
