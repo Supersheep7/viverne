@@ -128,6 +128,7 @@ body {
   font-size: large;
   box-sizing: border-box;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .rosa {
@@ -1685,10 +1686,6 @@ flex-wrap: nowrap;
 
   .Home * {
     width: 100px;
-  }
-
-  .dropdown-outer {
-    width: 99%;
   }
 
   .stat-container {
