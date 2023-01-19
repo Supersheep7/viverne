@@ -1674,6 +1674,10 @@ flex-wrap: nowrap;
 
 @media only screen and (max-width: 450px) {
 
+  .dropdown-inner > div > * {
+    justify-content: space-around;
+   }
+
   .cardactivetrue {
     width: 140px;
     right: -15px;
