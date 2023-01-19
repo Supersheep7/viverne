@@ -21,10 +21,9 @@ export default class Dropdown extends React.Component {
 
    async dropClick() {
 
-        await this.dropAPI()
-        .then(setTimeout(() => {
+       setTimeout(() => {
             this.setState ({ open: !this.state.open })
-        }, 60))
+        }, 60)
     }
 
     showHandleClick(nome) {
@@ -294,6 +293,11 @@ export default class Dropdown extends React.Component {
             ) 
         }
     }
+
+    componentDidMount() {
+        try {this.dropAPI()
+        } catch (e) {console.log(e)}
+      }
 }
 
 
