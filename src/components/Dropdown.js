@@ -18,7 +18,6 @@ export default class Dropdown extends React.Component {
         .catch(err => err);
     }
 
-
    async dropClick() {
 
        setTimeout(() => {
