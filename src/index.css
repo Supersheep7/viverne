@@ -333,7 +333,7 @@ button:active {
   transform: translate(-50%, -50%);
   z-index: 3;
   font-size: 20px;
-  filter: drop-shadow(0px 0px 2px black) drop-shadow(0px 0px 2px black) 
+  text-shadow: 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000;
 }
 
 .bar {
@@ -406,7 +406,7 @@ button:active {
 
 .dial-text {
   font-size: 200%;
-  filter: drop-shadow(0px 0px 2px black) drop-shadow(0px 0px 2px black) drop-shadow(0px 0px 2px black) drop-shadow(0px 0px 2px black) 
+  text-shadow: 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000; 
 }
 
 #face {
@@ -667,7 +667,7 @@ button:active {
   text-align: left;
   font-size: 40px;
   height: auto;
-  filter:  drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black)
+  text-shadow: 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000;
 }
 
 .dropdown-bg {
@@ -718,8 +718,7 @@ button:active {
   text-align: center;
   z-index: 7;
   font-size: 20px;
-  filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black) 
-
+  text-shadow: 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000;
 }
 
 .cd-cost {
@@ -730,8 +729,7 @@ button:active {
   text-align: center;
   z-index: 7;
   font-size: 16px;
-  filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black)
-
+  text-shadow: 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000;
 }
 
 .d8s {
@@ -807,10 +805,7 @@ filter: drop-shadow(0px 0px 4px orange) drop-shadow(0px 0px 4px orange) drop-sha
 
 .card-name {
   font-size: 22px;
-  filter: drop-shadow(0px 0px 1px black)
-  drop-shadow(0px 0px 1px black)
-  drop-shadow(0px 0px 1px black)
-  drop-shadow(0px 0px 1px black)
+  text-shadow: 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000;
 }
 
 
@@ -830,7 +825,7 @@ filter: drop-shadow(0px 0px 4px orange) drop-shadow(0px 0px 4px orange) drop-sha
   max-height: 500px;
   opacity: 90%;
   transition: opacity 0.25s;
-  filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black)
+  text-shadow: 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000;
 }
 
 .showtrue::after {
@@ -867,7 +862,7 @@ filter: drop-shadow(0px 0px 4px orange) drop-shadow(0px 0px 4px orange) drop-sha
   position: absolute;
   text-align: center;
   top: 21px;
-  filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black)
+  text-shadow: 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000;
 }
 
 .quantity {
@@ -878,7 +873,6 @@ filter: drop-shadow(0px 0px 4px orange) drop-shadow(0px 0px 4px orange) drop-sha
 .mana-cost {
   font-size: 16px;
   right: 42px;
-  filter: drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black) drop-shadow(0px 0px 1px black)
 }
 
 .daylimit, .combatlimit {
@@ -1113,7 +1107,7 @@ flex-wrap: nowrap;
   width: 100%;
   font-size: 50px;
   color: whitesmoke;
-  filter: drop-shadow(0 0 1px black) drop-shadow(0 0 1px black) drop-shadow(0 0 1px black)
+  text-shadow: 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000, 0px 0px 4px #000;
 }
 
 /***************** MEDIA QUERIES *****************/
