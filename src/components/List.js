@@ -41,6 +41,10 @@ class List extends React.Component {
   render() {
 
  return (
+  <div id="loader-wrapper">
+      <div className={"loading visible" + this.state.visible}>
+            <img src="/images/loading.gif" />
+        </div>
       <div className={"App visible" + this.state.visible}>
         {this.props.loggedIn && 
         <div className="admin-header">
@@ -51,6 +55,7 @@ class List extends React.Component {
           <Buttons className="Home"/>
         </div>
       </div>
+  </div>
     );
   }
 
