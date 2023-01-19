@@ -96,12 +96,6 @@ class Pg extends React.Component {
 
   overlayHandleClick() {
     this.setState({overlayOn: !this.state.overlayOn})
-    if (this.state.overlayOn === false) {
-      document.body.style.overflowY = "overlay"
-    }
-    else {
-      document.body.style.overflowY = "hidden"
-    }
 }
 
 
