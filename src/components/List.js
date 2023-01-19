@@ -16,6 +16,12 @@ class List extends React.Component {
   }
 
 
+  async pgAPI() {
+    await fetch(`${process.env.REACT_APP_BACKURL}${window.location.pathname}`)
+        .then(res => res.text())
+        .catch(err => err);
+  }
+
   logout() {
     console.log("logging out")
     axios

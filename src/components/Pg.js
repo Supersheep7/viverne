@@ -192,7 +192,7 @@ mod(int, nome) {
                                            .then(() => {
       try {
         this.pgAPI()
-        setTimeout(() => {this.setState({visible: true})}, 2200)
+        setTimeout(() => {this.setState({visible: true})}, 2500)
 
       } catch (e) {console.log(e)}
   });
