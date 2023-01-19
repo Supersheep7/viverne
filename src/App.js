@@ -6,7 +6,7 @@ import React from 'react';
 import Loginform from "./components/login-form"
 import Lvlup from "./components/Lvlup"
 import axios from "axios"
-import cookie from 'react-cookies'
+
 
 
 class App extends React.Component {
