@@ -46,6 +46,8 @@ class List extends React.Component {
 
   render() {
 
+  document.body.className = "notscrolly"
+
  return (
   <div id="loader-wrapper">
       <div className={"loading visible" + this.state.visible}>
