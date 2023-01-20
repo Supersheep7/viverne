@@ -127,7 +127,7 @@ body {
   background: url("../public/images/bgs/app.jpg")  no-repeat center center fixed;
   background-size: cover;
   width: auto;
-  height: 150vh;
+  height: 100vh;
   margin: -8px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: large;
