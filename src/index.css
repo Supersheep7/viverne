@@ -1,6 +1,4 @@
 /* BODY */
-:root { background-attachment: fixed; }
-
 .notscrolly {
   overflow-y: hidden;
 }
@@ -204,9 +202,11 @@ h1, h2, h3, h4, p, .infos, .skill-content, .btn {
   transition: all 0.5s;
 }
 
+@media only screen and (min-width: 1200px) {
 .Home *:hover {
   width: 300px;
   transition: all 0.5s;
+}
 }
 
 .navigator {
