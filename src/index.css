@@ -61,7 +61,7 @@ label {
   height: 70px;
   border-radius: 100%;
   background-color: #1F1D36;
-  filter: drop-shadow(0px 0px 4px whitesmoke) drop-shadow(0px 0px 4px whitesmoke); 
+  box-shadow: 0px 0px 4px 4px whitesmoke; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +69,7 @@ label {
 }
 
 .post-link:hover {
-  filter: drop-shadow(0px 0px 4px orange) drop-shadow(0px 0px 4px orange)
+  box-shadow: 0px 0px 4px 4px orange;
 }
 
 .post-link p {
@@ -182,20 +182,30 @@ h1, h2, h3, h4, p, .infos, .skill-content, .btn {
 /* Character Buttons */
 
 .App > .Home-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.Home {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  height: 100vh;
+  width: fit-content;
+  height: 300px;
 }
 
 .Home * {
   width: 200px;
-  filter:drop-shadow(0px 0px 2px #fff)
+  transition: all 0.5s;
 }
 
 .Home *:hover {
-  filter:drop-shadow(0px 0px 4px #000)
+  width: 300px;
+  transition: all 0.5s;
 }
 
 .navigator {
@@ -208,11 +218,11 @@ h1, h2, h3, h4, p, .infos, .skill-content, .btn {
 
 .navigator *, #home {
   width: 65px;
-  filter:drop-shadow(0px 0px 2px #fff)
+  border-radius: 100%;
 }
 
 .navigator *:hover, #home:hover {
-  filter:drop-shadow(0px 0px 4px #fff)
+  filter:drop-shadow(0px 0px 2px #fff)
 }
 
 #home {
@@ -411,7 +421,6 @@ button:active {
   z-index: 4;
   height: 600px;
   top: -100px;
-  filter:drop-shadow(0px -1px 2px #fff);
 }
 
 #bg {
@@ -756,7 +765,7 @@ button:active {
   font-size: 22px;
   font-weight: 550;
   color: black;
-  filter: drop-shadow(0 0 1px whitesmoke) drop-shadow(0 0 1px whitesmoke) drop-shadow(0 0 1px whitesmoke)  drop-shadow(0 0 8px whitesmoke)  ;
+  text-shadow: 0 0 1px whitesmoke, 0 0 1px whitesmoke, 0 0 1px whitesmoke, 0 0 1px whitesmoke, 0 0 4px whitesmoke, 0 0 8px whitesmoke ;
   text-align: justify;
   line-height: 140%;
   margin-top: 15px;
