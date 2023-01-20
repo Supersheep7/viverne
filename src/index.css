@@ -95,29 +95,27 @@ label {
 }
 
 #avatar > .transrightfalse {
-  transform: translateX(-700%);
+  right: 4000px;
   opacity: 0;
   z-index: -1;
 }
 
 #avatar > .transrighttrue {
   right: 0;
-  transform: translateX(0%);
   opacity: 1;
-  transition: all 1.5s ease-out;
+  transition: right 1.5s ease-out;
 }
 
 #face.transleftfalse {
-  transform: translateX(700%);
+  left: 4000px;
   opacity: 0;
   z-index: -1;
 }
 
 #face.translefttrue {
   left: 0;
-  transform: translateX(0%);
   opacity: 1;
-  transition: transform 1.5s ease-out;
+  transition: left 1.5s ease-out;
 }
 
 body {
@@ -708,7 +706,7 @@ button:active {
   bottom: 40px;
   right: 37.5px;
   text-align: center;
-  z-index: 7;
+  z-index: 5;
   font-size: 20px;
   text-shadow: 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000, 0px 0px 3px #000;
 }
@@ -812,7 +810,7 @@ box-shadow: 0px 0px 8px 6px orange;
   border-radius: 20px;
   width: 150%;
   padding: 25px;
-  z-index: 5;
+  z-index: 6;
   margin: 0;
   max-height: 1000px;
   opacity: 90%;
