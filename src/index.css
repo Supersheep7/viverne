@@ -1,4 +1,5 @@
 /* BODY */
+:root { background-attachment: fixed; }
 
 .notscrolly {
   overflow-y: hidden;
