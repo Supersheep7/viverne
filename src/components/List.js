@@ -48,7 +48,7 @@ class List extends React.Component {
 
   document.body.className = "notscrolly"
 
- return (
+  if (this.props.loggedIn !== undefined) { return (
   <div id="loader-wrapper">
       <div className={"loading visible" + this.state.visible}>
             <img src="/images/loading.gif" />
@@ -64,7 +64,13 @@ class List extends React.Component {
         </div>
       </div>
   </div>
-    );
+    ) }
+     else return (
+      <div className={"loading visiblefalse"}>
+            <img src="/images/loading.gif" />
+            <h1>Waiting for render.com response...</h1>
+        </div>
+    )
   }
 
   
