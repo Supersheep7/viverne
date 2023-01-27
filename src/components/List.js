@@ -66,9 +66,9 @@ class List extends React.Component {
   </div>
     ) }
      else return (
-      <div className={"loading visiblefalse"}>
+      <div className="loading visiblefalse flex column">
             <img src="/images/loading.gif" />
-            <h1>Waiting for render.com response...</h1>
+            <h1 style={{width: "100%", textAlign: "center"}}>Waiting for render.com response...</h1>
         </div>
     )
   }
