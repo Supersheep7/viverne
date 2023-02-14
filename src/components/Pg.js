@@ -99,86 +99,97 @@ class Pg extends React.Component {
 }
 
 
-mod(int, nome) {
-  this.setState({
-    modificatore: {
-      skill: nome,
-      mod: int
-    } 
-  })
-}
+  mod(int, nome) {
+    this.setState({
+      modificatore: {
+        skill: nome,
+        mod: int
+      } 
+    })
+  }
 
   render() {
 
     const { isLoading, bonus, data } = this.state
   
-    if (isLoading) {
-      return null;
+    if (this.props.loggedIn !== undefined) { 
+    
+      if (isLoading) { return null }
+
+      if (!this.state.visible || this.state.overlayOn) {
+        document.body.className = "notscrolly"
+      } 
+      else { document.body.className = "scrolly" }
+  
+      let arrCA = this.state.data.inventario.filter(d => this.match(d.nome, this.state.inventario, "modificatore", "skill") === "CA")
+                                            .map(d => this.match(d.nome, this.state.inventario, "modificatore", "bonus"))
+      let totalCA = arrCA.reduce((a, b) => a + b, 0)  
+  
+      return (
+        <div id="loading-wrapper">
+          <div className={"loading visible" + this.state.visible}>
+              <img src="/images/loading.gif" />
+          </div>
+          <div id="background-app" className={data.religione + " App " + "overlay" + this.state.overlayOn + " visible" + this.state.visible}>
+            {this.props.loggedIn && 
+            <div>
+              <div className="admin-header">
+                <p>{this.props.username}</p>
+                <p className="logout" onClick={() => this.logout()}>Logout</p> 
+              </div>
+              <div style={{height: "50px"}}>
+              </div>
+            </div>}
+            <div>
+            <Avatar 
+              gaugeOn={this.state.gaugeOn} gauge={this.gauge.bind(this)} gaugeHandleClick={this.gaugeHandleClick.bind(this)} gaugeCallback={this.gaugeCallback.bind(this)}
+              nome={data.nome} magia={data.religione} eta={data.eta} altezza={data.altezza} 
+              data={data} CA={10 + data.skills.motskills.reazione + totalCA} pf={this.state.pf}
+              mana={this.state.mana} luc={this.state.luc} maxpf={data.maxpf} maxmana={data.maxmana} maxluc={data.maxluc}
+              visible={this.state.visible}/>
+              <div className='dropdown-wrapper'>
+                <Stats data={data} />
+                <Dropdown nome="abilita_innate" base={"abilita"} data={data.abilita_innate}/>
+                <Dropdown nome="tattiche" base={"tattiche"} data={data.tattiche}/>
+                <Dropdown nome="magie" base={"magie"} data={data.magie}/>
+                <Dropdown nome="attacchi" base={"attacchi"} data={data.attacchi}/>
+                <Dropdown nome="bonus" base={"bonus"} data={data.bonus}/>
+                <Dropdown nome="inventario" base={"inventario"} data={data.inventario}/>
+                <Dropdown nome="missioni" base={"missioni"} data={data.missioni}/>
+                <Background nome="background" data={data}/>
+              </div>
+            </div>
+            <DiceRoller 
+              ref={this.DiceRoller}
+              modificatore={this.state.modificatore} modificatoremod={this.state.modificatore.mod}
+              data={data} bonus={bonus} active={this.state.active}
+              addstack={this.state.addstack}
+              overlayHandleClick={this.overlayHandleClick.bind(this)}
+              mod={this.mod.bind(this)} 
+              />
+            {this.props.loggedIn && 
+            <a href={process.env.REACT_APP_URL + "/lvlup"}><div className="post-link" ><p>+</p></div></a>}
+            <Footer />  
+            <div className={"dice-roller-overlay open" + this.state.overlayOn}>
+                <Overlay open={this.state.overlayOn}
+                modificatore={this.state.modificatore} modificatoremod={this.state.modificatore.mod}
+                data={data} bonus={bonus}
+                ref={this.AddAPI} addstack={this.state.addstack}  mod={this.mod.bind(this)}/> 
+              </div>  
+          </div>
+        </div>
+      )  
+    
     }
 
-    if (!this.state.visible || this.state.overlayOn) {
-      document.body.className = "notscrolly"
-    } 
-    else { document.body.className = "scrolly" }
-
-    let arrCA = this.state.data.inventario.filter(d => this.match(d.nome, this.state.inventario, "modificatore", "skill") === "CA")
-                                          .map(d => this.match(d.nome, this.state.inventario, "modificatore", "bonus"))
-    let totalCA = arrCA.reduce((a, b) => a + b, 0)  
-
-    return (
-      <div id="loading-wrapper">
-        <div className={"loading visible" + this.state.visible}>
+    else return (
+      <div className="loading visiblefalse flex column">
             <img src="/images/loading.gif" />
+            <h1 style={{width: "100%", textAlign: "center"}}>Waiting for render.com response...</h1>
         </div>
-        <div id="background-app" className={data.religione + " App " + "overlay" + this.state.overlayOn + " visible" + this.state.visible}>
-          {this.props.loggedIn && 
-          <div>
-            <div className="admin-header">
-              <p>{this.props.username}</p>
-              <p className="logout" onClick={() => this.logout()}>Logout</p> 
-            </div>
-            <div style={{height: "50px"}}>
-            </div>
-          </div>}
-          <div>
-          <Avatar 
-            gaugeOn={this.state.gaugeOn} gauge={this.gauge.bind(this)} gaugeHandleClick={this.gaugeHandleClick.bind(this)} gaugeCallback={this.gaugeCallback.bind(this)}
-            nome={data.nome} magia={data.religione} eta={data.eta} altezza={data.altezza} 
-            data={data} CA={10 + data.skills.motskills.reazione + totalCA} pf={this.state.pf}
-            mana={this.state.mana} luc={this.state.luc} maxpf={data.maxpf} maxmana={data.maxmana} maxluc={data.maxluc}
-            visible={this.state.visible}/>
-            <div className='dropdown-wrapper'>
-              <Stats data={data} />
-              <Dropdown nome="abilita_innate" base={"abilita"} data={data.abilita_innate}/>
-              <Dropdown nome="tattiche" base={"tattiche"} data={data.tattiche}/>
-              <Dropdown nome="magie" base={"magie"} data={data.magie}/>
-              <Dropdown nome="attacchi" base={"attacchi"} data={data.attacchi}/>
-              <Dropdown nome="bonus" base={"bonus"} data={data.bonus}/>
-              <Dropdown nome="inventario" base={"inventario"} data={data.inventario}/>
-              <Dropdown nome="missioni" base={"missioni"} data={data.missioni}/>
-              <Background nome="background" data={data}/>
-            </div>
-          </div>
-          <DiceRoller 
-            ref={this.DiceRoller}
-            modificatore={this.state.modificatore} modificatoremod={this.state.modificatore.mod}
-            data={data} bonus={bonus} active={this.state.active}
-            addstack={this.state.addstack}
-            overlayHandleClick={this.overlayHandleClick.bind(this)}
-            mod={this.mod.bind(this)} 
-            />
-          {this.props.loggedIn && 
-          <a href={process.env.REACT_APP_URL + "/lvlup"}><div className="post-link" ><p>+</p></div></a>}
-          <Footer />  
-          <div className={"dice-roller-overlay open" + this.state.overlayOn}>
-              <Overlay open={this.state.overlayOn}
-              modificatore={this.state.modificatore} modificatoremod={this.state.modificatore.mod}
-              data={data} bonus={bonus}
-              ref={this.AddAPI} addstack={this.state.addstack}  mod={this.mod.bind(this)}/> 
-            </div>  
-        </div>
-      </div>
-    )  
+    )
+
+    
   }
 
   componentDidMount() {
